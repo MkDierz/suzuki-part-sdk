@@ -2,11 +2,11 @@
  * MySuzuki catalog (mysuzuki.id).
  *
  * Richer part metadata than e-Parts (pricing, stock, weights, applicable
- * vehicles) but **no figure coordinates** — use `@mkdierz/suzuki-indo-parts-sdk/eparts`
+ * vehicles) but **no figure coordinates** — use `@mkdierz/suzuki-parts-sdk/eparts`
  * when you need clickable overlays.
  *
  * ```ts
- * import { MySuzukiClient } from "@mkdierz/suzuki-indo-parts-sdk/mysuzuki";
+ * import { MySuzukiClient } from "@mkdierz/suzuki-parts-sdk/mysuzuki";
  * ```
  */
 export { MySuzukiClient } from "./client.js";
@@ -36,7 +36,7 @@ export type {
 } from "./types.js";
 
 /**
- * @deprecated Import from `@mkdierz/suzuki-indo-parts-sdk` instead — errors
+ * @deprecated Import from `@mkdierz/suzuki-parts-sdk` instead — errors
  * are shared across both clients so one `instanceof` check catches everything.
  */
 export {

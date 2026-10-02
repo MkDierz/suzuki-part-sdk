@@ -1,11 +1,11 @@
-# @mkdierz/suzuki-indo-parts-sdk
+# @mkdierz/suzuki-parts-sdk
 
 Unofficial, dependency-free TypeScript clients for the two Suzuki Indonesia
 parts catalogs. Zero runtime dependencies — just global `fetch` (Node 18+,
 Bun, Deno, browsers).
 
 ```bash
-npm install @mkdierz/suzuki-indo-parts-sdk
+npm install @mkdierz/suzuki-parts-sdk
 ```
 
 ## Two clients, one package
@@ -28,7 +28,7 @@ Neither API is documented.
 ## Quick start: vehicle → figure → overlay-ready parts
 
 ```ts
-import { EpartsClient } from "@mkdierz/suzuki-indo-parts-sdk";
+import { EpartsClient } from "@mkdierz/suzuki-parts-sdk";
 
 const client = new EpartsClient();
 
@@ -99,7 +99,7 @@ coordinates, so a missing position never silently pins a marker to the corner.
 Better part data, no coordinates:
 
 ```ts
-import { MySuzukiClient, formatRupiah } from "@mkdierz/suzuki-indo-parts-sdk";
+import { MySuzukiClient, formatRupiah } from "@mkdierz/suzuki-parts-sdk";
 
 const suzuki = new MySuzukiClient();
 
@@ -122,8 +122,8 @@ formatRupiah(parts[0]!.price); // "Rp 1.025.500"
 ## Subpath imports
 
 ```ts
-import { EpartsClient } from "@mkdierz/suzuki-indo-parts-sdk/eparts";
-import { MySuzukiClient } from "@mkdierz/suzuki-indo-parts-sdk/mysuzuki";
+import { EpartsClient } from "@mkdierz/suzuki-parts-sdk/eparts";
+import { MySuzukiClient } from "@mkdierz/suzuki-parts-sdk/mysuzuki";
 ```
 
 Available if you prefer explicit imports or want to keep one catalog out of
@@ -141,7 +141,7 @@ SuzukiError
 ```
 
 ```ts
-import { SuzukiApiError, SuzukiNetworkError } from "@mkdierz/suzuki-indo-parts-sdk";
+import { SuzukiApiError, SuzukiNetworkError } from "@mkdierz/suzuki-parts-sdk";
 
 try {
   await client.partTypes.list();

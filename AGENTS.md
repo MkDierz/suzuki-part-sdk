@@ -1,6 +1,6 @@
-# AGENTS.md — suzuki-indo-part-sdk
+# AGENTS.md — suzuki-parts-sdk
 
-Publishable npm package: `@mkdierz/suzuki-indo-parts-sdk`. Unofficial,
+Publishable npm package: `@mkdierz/suzuki-parts-sdk`. Unofficial,
 zero-dependency TypeScript clients for the two Suzuki Indonesia parts catalogs,
 both reverse-engineered from captured request logs.
 
@@ -30,7 +30,7 @@ scripts/postbuild.ts  writes dist/{esm,cjs}/package.json type markers
 test/sdk.test.ts      all tests, mocked fetch
 ```
 
-Consumers import the root (`@mkdierz/suzuki-indo-parts-sdk`) or the
+Consumers import the root (`@mkdierz/suzuki-parts-sdk`) or the
 `/eparts` and `/mysuzuki` subpaths. Both map to real `dist/` folders via
 `package.json` `exports` — keep the exports map in sync when adding files.
 

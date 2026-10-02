@@ -1,5 +1,5 @@
 /**
- * `@mkdierz/suzuki-indo-parts-sdk`
+ * `@mkdierz/suzuki-parts-sdk`
  *
  * Unofficial, dependency-free TypeScript clients for the two Suzuki Indonesia
  * parts catalogs. Both reverse-engineered from captured request logs.
@@ -13,7 +13,7 @@
  * for richer part metadata (price, stock, weights) use {@link MySuzukiClient}.
  *
  * ```ts
- * import { EpartsClient, SuzukiError } from "@mkdierz/suzuki-indo-parts-sdk";
+ * import { EpartsClient, SuzukiError } from "@mkdierz/suzuki-parts-sdk";
  *
  * const client = new EpartsClient();
  * const { options } = await client.vehicles.list({ type: "4-wheels" });
@@ -22,8 +22,8 @@
  * Subpath imports are available for tree-shaking and to keep names explicit:
  *
  * ```ts
- * import { EpartsClient } from "@mkdierz/suzuki-indo-parts-sdk/eparts";
- * import { MySuzukiClient } from "@mkdierz/suzuki-indo-parts-sdk/mysuzuki";
+ * import { EpartsClient } from "@mkdierz/suzuki-parts-sdk/eparts";
+ * import { MySuzukiClient } from "@mkdierz/suzuki-parts-sdk/mysuzuki";
  * ```
  */
 

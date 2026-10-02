@@ -5,7 +5,7 @@
  * `position_y`, which this module exposes through `catalog.figureDetail`.
  *
  * ```ts
- * import { EpartsClient } from "@mkdierz/suzuki-indo-parts-sdk/eparts";
+ * import { EpartsClient } from "@mkdierz/suzuki-parts-sdk/eparts";
  * ```
  */
 export { EpartsClient, parsePosition } from "./client.js";
@@ -37,7 +37,7 @@ export type {
 } from "./types.js";
 
 /**
- * @deprecated Import from `@mkdierz/suzuki-indo-parts-sdk` instead — errors
+ * @deprecated Import from `@mkdierz/suzuki-parts-sdk` instead — errors
  * are shared across both clients so one `instanceof` check catches everything.
  */
 export {

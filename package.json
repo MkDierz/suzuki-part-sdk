@@ -1,6 +1,6 @@
 {
   "name": "@mkdierz/suzuki-parts-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unofficial, dependency-free TypeScript SDK for Suzuki Indonesia parts catalogs (suzuki.co.id e-Parts + MySuzuki), with figure hotspot/overlay coordinates.",
   "keywords": [
     "suzuki",
