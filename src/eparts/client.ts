@@ -210,29 +210,18 @@ class PartTypesResource {
     );
   }
 
-  /** Iterate over all part types, stopping when a page yields no new ids. */
-  iterate(
-    options?: WalkFiguresParams,
+  /**
+   * Every part type, as an async iterable. This endpoint is not paginated, so
+   * it is a single request.
+   */
+  async *iterate(
+    options?: RequestOptions,
   ): AsyncGenerator<OtherPartType, void, undefined> {
-    return walkPages<OtherPartType>(
-      async (page: number) => {
-        const data = await this.get<OtherPartType[]>(
-          `${BASE_PATH}/other-part-types/index`,
-          { page },
-          [],
-        );
-        return { items: data, totalPage: null };
-      },
-      {
-        startPage: options?.startPage,
-        maxPages: options?.maxPages,
-        getKey: (item: OtherPartType) => item.id,
-      },
-    );
+    yield* await this.list(options);
   }
 
   /** Collect all part types into a normalized shape. */
-  listAll(options?: WalkFiguresParams): Promise<{
+  listAll(options?: RequestOptions): Promise<{
     data: OtherPartType[];
     summary: {
       total_show: number;
@@ -253,9 +242,9 @@ class PartTypesResource {
         total_data: items.length,
       },
       pagination: {
-        page: options?.startPage ?? 1,
+        page: 1,
         per_page: items.length,
-        total_page: null,
+        total_page: 1,
       },
     }));
   }
@@ -278,29 +267,21 @@ class VehiclesResource {
     );
   }
 
-  /** Iterate over all vehicle options, stopping when a page yields no new ids. */
-  iterate(
-    options?: WalkFiguresParams,
+  /**
+   * Every vehicle option for a `type`, as an async iterable.
+   *
+   * Unlike `/figures/ajax`, this endpoint is **not paginated** — it returns the
+   * full option list in one response — so this is a single request.
+   */
+  async *iterate(
+    params: ListVehiclesParams,
   ): AsyncGenerator<VehicleOption, void, undefined> {
-    return walkPages<VehicleOption>(
-      async (page: number) => {
-        const data = await this.get<VehiclesData>(
-          `${BASE_PATH}/vehicles/ajax/vehicles`,
-          { page },
-          {} as VehiclesData,
-        );
-        return { items: data.options, totalPage: null };
-      },
-      {
-        startPage: options?.startPage,
-        maxPages: options?.maxPages,
-        getKey: (option: VehicleOption) => option.value,
-      },
-    );
+    const data = await this.list(params);
+    yield* data.options;
   }
 
   /** Collect all vehicle options into a normalized shape. */
-  async listAll(options?: WalkFiguresParams): Promise<{
+  async listAll(params: ListVehiclesParams): Promise<{
     data: VehicleOption[];
     summary: {
       total_show: number;
@@ -313,7 +294,7 @@ class VehiclesResource {
       total_page: number | null;
     };
   }> {
-    return collect(this.iterate(options)).then((items) => ({
+    return collect(this.iterate(params)).then((items) => ({
       data: items,
       summary: {
         total_show: items.length,
@@ -321,9 +302,9 @@ class VehiclesResource {
         total_data: items.length,
       },
       pagination: {
-        page: options?.startPage ?? 1,
+        page: 1,
         per_page: items.length,
-        total_page: null,
+        total_page: 1,
       },
     }));
   }
@@ -342,29 +323,18 @@ class PreviewTagsResource {
     );
   }
 
-  /** Iterate over all preview tags, stopping when a page yields no new ids. */
-  iterate(
-    options?: WalkFiguresParams,
+  /**
+   * All preview tags for a vehicle, as an async iterable. This endpoint is not
+   * paginated, so it is a single request.
+   */
+  async *iterate(
+    params: ListPreviewTagsParams,
   ): AsyncGenerator<PreviewTag, void, undefined> {
-    return walkPages<PreviewTag>(
-      async (page: number) => {
-        const data = await this.get<PreviewTag[]>(
-          `${BASE_PATH}/preview-tag`,
-          { page },
-          [],
-        );
-        return { items: data, totalPage: null };
-      },
-      {
-        startPage: options?.startPage,
-        maxPages: options?.maxPages,
-        getKey: (tag: PreviewTag) => tag.id,
-      },
-    );
+    yield* await this.list(params);
   }
 
   /** Collect all preview tags into a normalized shape. */
-  async listAll(options?: WalkFiguresParams): Promise<{
+  async listAll(params: ListPreviewTagsParams): Promise<{
     data: PreviewTag[];
     summary: {
       total_show: number;
@@ -377,7 +347,7 @@ class PreviewTagsResource {
       total_page: number | null;
     };
   }> {
-    return collect(this.iterate(options)).then((items) => ({
+    return collect(this.iterate(params)).then((items) => ({
       data: items,
       summary: {
         total_show: items.length,
@@ -385,9 +355,9 @@ class PreviewTagsResource {
         total_data: items.length,
       },
       pagination: {
-        page: options?.startPage ?? 1,
+        page: 1,
         per_page: items.length,
-        total_page: null,
+        total_page: 1,
       },
     }));
   }

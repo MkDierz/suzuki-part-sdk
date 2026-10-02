@@ -128,9 +128,9 @@ export interface PartVehicleRef {
 export interface MysuzukiPart {
   id: string;
   figure_id: string;
-  category_id: string;
+  category_id: string | null;
   type_id: string;
-  origin_id: string;
+  origin_id: string | null;
   origin_parent_id: string | null;
   name: string;
   description: string | null;
@@ -142,9 +142,9 @@ export interface MysuzukiPart {
   /** String on the wire, e.g. `"0"`. */
   price_diskon: string;
   price_usd: number;
-  remarks: string;
+  remarks: string | null;
   number_part: string;
-  number_sub_part: string;
+  number_sub_part: string | null;
   number_tag: string;
   number_complete: string | null;
   created_at: string;
@@ -169,9 +169,9 @@ export interface MysuzukiPart {
   import: string | null;
   min_dcs: string;
   sync_date: string | null;
-  group_type: string;
+  group_type: string | null;
   popularity: string;
-  category_name: string;
+  category_name: string | null;
   figure_name: string;
   figure_image: string;
   status_wishlist: string;

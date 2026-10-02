@@ -223,7 +223,7 @@ export interface RequestOptions {
 
 export interface ListVehiclesParams extends RequestOptions {
   /** Wire: `type`. */
-  type: "4-wheels" | "2-weels" | "marine";
+  type: "4-wheels" | "2-wheels" | "marine";
   /** Wire: `return`. Observed: `"slug"`. */
   returnKey?: "slug" | "id";
   /** Wire: `vehicle`. Present in the capture's param set, value never seen. */

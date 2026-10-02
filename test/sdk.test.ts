@@ -288,6 +288,60 @@ describe("figures.iterate", () => {
   });
 });
 
+describe("eparts vehicles.listAll", () => {
+  test("returns every option for a type without needing a vehicle id", async () => {
+    const mock = mockFetch(
+      json(
+        epartsOk({
+          options: [
+            { value: "", label: "Pilih Model Kendaraan" },
+            { value: "new-smash-fk110sd-sc", label: "NEW SMASH (FK110SD/SC)" },
+          ],
+          type: "2-wheels",
+        }),
+      ),
+    );
+    const client = new EpartsClient({ fetch: mock.impl });
+
+    const result = await client.vehicles.listAll({ type: "2-wheels" });
+
+    expect(mock.urls[0]).toContain("type=2-wheels");
+    expect(mock.calls()).toBe(1);
+    expect(result.data.map((o) => o.value)).toEqual([
+      "",
+      "new-smash-fk110sd-sc",
+    ]);
+  });
+});
+
+describe("eparts previewTags.listAll", () => {
+  test("only requires a vehicle id and sends it as `id`", async () => {
+    const mock = mockFetch(
+      json(
+        epartsOk([
+          {
+            id: 239,
+            vehicle_id: 95,
+            type_id: 9,
+            position_x: "63.42592592592593",
+            position_y: "46.12676056338028",
+            created_at: "2018-03-29T07:26:48.000000Z",
+            type_slug: "body",
+            type_name: "Body",
+          },
+        ]),
+      ),
+    );
+    const client = new EpartsClient({ fetch: mock.impl });
+
+    const result = await client.previewTags.listAll({ vehicleId: 95 });
+
+    expect(mock.urls[0]).toContain("/preview-tag?id=95");
+    expect(mock.calls()).toBe(1);
+    expect(result.data).toHaveLength(1);
+  });
+});
+
 describe("MySuzukiClient envelope handling", () => {
   const mysuzukiOk = <T>(response: T) => ({ code: 200, message: "success", response });
 
