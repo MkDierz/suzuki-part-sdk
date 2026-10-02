@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Bundler",
+    "target": "ES2022",
+    "rootDir": "src",
+    "outDir": "dist/cjs",
+
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    // `verbatimModuleSyntax` is incompatible with `module: commonjs`.
+    "verbatimModuleSyntax": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "include": ["src"]
+}

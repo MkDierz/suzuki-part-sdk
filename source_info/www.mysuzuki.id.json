@@ -1,0 +1,909 @@
+{
+  "summary": {
+    "source": "./files/www.mysuzuki.id.har",
+    "totalEntries": 36,
+    "keptEntries": 36,
+    "uniqueEndpoints": 6,
+    "hosts": {
+      "apinew.mysuzuki.id": 2,
+      "api2-commerce.mysuzuki.id": 4
+    },
+    "notes": [
+      "Endpoints are deduplicated by METHOD + host + normalized path ({id}, {uuid}, {hash}, {token} replace dynamic segments).",
+      "responseShape/requestBodyShape merge ALL observed items; keys ending in '?' were only present in some.",
+      "Arrays in examples are shortened to the first item.",
+      "Authorization/cookies/tokens are masked."
+    ]
+  },
+  "endpoints": {
+    "apinew.mysuzuki.id": [
+      {
+        "method": "GET",
+        "host": "apinew.mysuzuki.id",
+        "path": "/category",
+        "calls": 1,
+        "statuses": {
+          "200": 1
+        },
+        "request": {
+          "url": "https://apinew.mysuzuki.id/category",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 200,
+            "message": "OK - Proses Berhasil",
+            "response": {
+              "data": [
+                {
+                  "id": "2c667857ee1f40783894da6612f0b1c5c0985e32",
+                  "name": "Genuine Part",
+                  "image": "https://storage.mysuzuki.id/category/genuine part.png",
+                  "slug": "_sgp"
+                },
+                "…(+10 more items)"
+              ]
+            }
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string",
+          "response": {
+            "data": [
+              {
+                "id": "string",
+                "name": "string",
+                "image": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        },
+        "avgDurationMs": 220
+      },
+      {
+        "method": "GET",
+        "host": "apinew.mysuzuki.id",
+        "path": "/chat/dealers",
+        "calls": 1,
+        "statuses": {
+          "200": 1
+        },
+        "request": {
+          "url": "https://apinew.mysuzuki.id/chat/dealers",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          },
+          "query": {
+            "dealer_type": "motor"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 498,
+            "message": "Sesi anda sudah habis, silakan untuk logout dan login ulang!"
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string"
+        },
+        "queryParams": [
+          "dealer_type"
+        ],
+        "avgDurationMs": 224
+      }
+    ],
+    "api2-commerce.mysuzuki.id": [
+      {
+        "method": "GET",
+        "host": "api2-commerce.mysuzuki.id",
+        "path": "/vehicle",
+        "calls": 8,
+        "statuses": {
+          "200": 8
+        },
+        "request": {
+          "url": "https://api2-commerce.mysuzuki.id/vehicle",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          },
+          "query": {
+            "length": "10",
+            "type_code": "2-wheels"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 200,
+            "message": "OK - Proses berhasil.",
+            "response": {
+              "data": [
+                {
+                  "id": "3c82becc90a0145784ce4371d493694984ab000f",
+                  "parent_id": null,
+                  "type_id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5",
+                  "name": "ACCESS 125",
+                  "slug": "access-125",
+                  "image": "https://storage.mysuzuki.id/vehicle/65344ad45b0c05a4c17a879b4055088d.png",
+                  "year": "2026",
+                  "number_vin": "123456778",
+                  "status_featured": "0",
+                  "status_active": "1",
+                  "created_at": "2026-07-06 10:14:48",
+                  "updated_at": "2026-07-06 12:19:05",
+                  "deleted_at": null,
+                  "epart_id": null,
+                  "type_code": "2-wheels",
+                  "type_name": "Motorcycle",
+                  "file_image": "vehicle/65344ad45b0c05a4c17a879b4055088d.png"
+                },
+                "…(+9 more items)"
+              ],
+              "summary": {
+                "total_show": 10,
+                "total_filter": 39,
+                "total_data": 110
+              },
+              "pagination": {
+                "page": 1,
+                "per_page": 10,
+                "total_page": 4
+              }
+            }
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string",
+          "response": {
+            "data": [
+              {
+                "id": "string",
+                "parent_id": "null | string",
+                "type_id": "string",
+                "name": "string",
+                "slug": "string",
+                "image": "string | null",
+                "year": "string",
+                "number_vin": "string",
+                "status_featured": "string",
+                "status_active": "string",
+                "created_at": "string",
+                "updated_at": "string",
+                "deleted_at": "null",
+                "epart_id": "null | string",
+                "type_code": "string",
+                "type_name": "string",
+                "file_image???????": "string",
+                "file_image????????????????": "string",
+                "file_image??????????????": "string",
+                "file_image?????????????": "string",
+                "file_image????????????": "string",
+                "file_image???????????": "string",
+                "file_image??????????": "string",
+                "file_image?????????": "string",
+                "file_image????????": "string",
+                "file_image??????": "string",
+                "file_image?????": "string",
+                "file_image????": "string",
+                "file_image???": "string",
+                "file_image??": "string",
+                "file_image?": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          }
+        },
+        "queryParams": [
+          "length",
+          "type_code"
+        ],
+        "avgDurationMs": 212
+      },
+      {
+        "method": "GET",
+        "host": "api2-commerce.mysuzuki.id",
+        "path": "/part",
+        "calls": 6,
+        "statuses": {
+          "200": 6
+        },
+        "request": {
+          "url": "https://api2-commerce.mysuzuki.id/part",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          },
+          "query": {
+            "vehicle_id": "5f1dde89024f545826da57c3c4c0f51a88c7702d",
+            "recomended": "1",
+            "length": "24",
+            "page": "1",
+            "name": ""
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 404,
+            "message": "Not Found - Permintaan tidak ditemukan."
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string",
+          "response????": {
+            "data": [
+              {
+                "id": "string",
+                "figure_id": "string",
+                "category_id": "string",
+                "type_id": "string",
+                "origin_id": "string",
+                "origin_parent_id": "null",
+                "name": "string",
+                "description": "string",
+                "image": "null",
+                "quantity": "string",
+                "price": "number",
+                "price_diskon": "string",
+                "price_usd": "number",
+                "remarks": "string",
+                "number_part": "string",
+                "number_sub_part": "string | null",
+                "number_tag": "string",
+                "number_complete": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "weight_original": "number",
+                "weight_shipping": "number",
+                "status_active": "string",
+                "status_promo": "string",
+                "status_sarp": "string",
+                "status_ecstar": "string",
+                "status_image": "string",
+                "status_flag": "string",
+                "status_stock": "string",
+                "dim_length": "number",
+                "dim_width": "number",
+                "dim_height": "number",
+                "recomended": "string",
+                "saleable": "string",
+                "air": "string",
+                "import": "null",
+                "min_dcs": "string",
+                "sync_date": "null",
+                "group_type": "string",
+                "popularity": "string",
+                "category_name": "string",
+                "figure_name": "string",
+                "figure_image": "string",
+                "status_wishlist": "string",
+                "file_figure_image": "string",
+                "images": "null",
+                "vehicles": [
+                  {
+                    "id": "string",
+                    "type_id": "string",
+                    "type_code": "string",
+                    "type_name": "string",
+                    "name": "string",
+                    "image": "string"
+                  }
+                ],
+                "volume_weight_gram": "number",
+                "volume_weight_kg": "number"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response?": {
+            "data": [
+              {
+                "id": "string",
+                "figure_id": "string",
+                "category_id": "string | null",
+                "type_id": "string",
+                "origin_id": "string | null",
+                "origin_parent_id": "null",
+                "name": "string",
+                "description": "string",
+                "image": "null",
+                "quantity": "string",
+                "price": "number",
+                "price_diskon": "string",
+                "price_usd": "number",
+                "remarks": "string | null",
+                "number_part": "string",
+                "number_sub_part": "string | null",
+                "number_tag": "string",
+                "number_complete": "null | string",
+                "created_at": "string",
+                "updated_at": "string",
+                "weight_original": "number",
+                "weight_shipping": "number",
+                "status_active": "string",
+                "status_promo": "string",
+                "status_sarp": "string",
+                "status_ecstar": "string",
+                "status_image": "string",
+                "status_flag": "string",
+                "status_stock": "string",
+                "dim_length": "number",
+                "dim_width": "number",
+                "dim_height": "number",
+                "recomended": "string",
+                "saleable": "string",
+                "air": "string",
+                "import": "null",
+                "min_dcs": "string",
+                "sync_date": "null",
+                "group_type": "string | null",
+                "popularity": "string",
+                "category_name": "string | null",
+                "figure_name": "string",
+                "figure_image": "string",
+                "status_wishlist": "string",
+                "file_figure_image": "string",
+                "images": "null",
+                "vehicles": [
+                  {
+                    "id": "string",
+                    "type_id": "string",
+                    "type_code": "string",
+                    "type_name": "string",
+                    "name": "string",
+                    "image": "string"
+                  }
+                ],
+                "volume_weight_gram????": "number",
+                "volume_weight_kg????": "number",
+                "volume_weight_gram???": "number",
+                "volume_weight_kg???": "number",
+                "volume_weight_gram??": "number",
+                "volume_weight_kg??": "number",
+                "volume_weight_gram?": "number",
+                "volume_weight_kg?": "number"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          }
+        },
+        "queryParams": [
+          "vehicle_id",
+          "recomended",
+          "length",
+          "page",
+          "name",
+          "figure_id"
+        ],
+        "avgDurationMs": 2218
+      },
+      {
+        "method": "GET",
+        "host": "api2-commerce.mysuzuki.id",
+        "path": "/category",
+        "calls": 2,
+        "statuses": {
+          "200": 2
+        },
+        "request": {
+          "url": "https://api2-commerce.mysuzuki.id/category",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          },
+          "query": {
+            "type_id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 200,
+            "message": "OK - Proses berhasil.",
+            "response": {
+              "data": [
+                {
+                  "id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5",
+                  "group_type": "primary",
+                  "group_id": "5",
+                  "name": "Engine",
+                  "slug": null,
+                  "image": "https://storage.mysuzuki.id/category/group_3277.png",
+                  "created_at": "2018-09-26 12:53:56",
+                  "updated_at": "2018-09-26 12:53:56",
+                  "status_active": "1",
+                  "in_website": null,
+                  "position": "1",
+                  "type_id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5"
+                },
+                "…(+7 more items)"
+              ],
+              "summary": {
+                "total_show": 8,
+                "total_filter": 8,
+                "total_data": 18
+              },
+              "pagination": {
+                "page": 1,
+                "per_page": 10,
+                "total_page": 1
+              }
+            }
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string",
+          "response": {
+            "data": [
+              {
+                "id": "string",
+                "group_type": "string",
+                "group_id": "string",
+                "name": "string",
+                "slug": "null | string",
+                "image": "string",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "in_website": "null | string",
+                "position": "string",
+                "type_id": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          }
+        },
+        "queryParams": [
+          "type_id"
+        ],
+        "avgDurationMs": 126
+      },
+      {
+        "method": "GET",
+        "host": "api2-commerce.mysuzuki.id",
+        "path": "/figure",
+        "calls": 18,
+        "statuses": {
+          "200": 18
+        },
+        "request": {
+          "url": "https://api2-commerce.mysuzuki.id/figure",
+          "headers": {
+            "accept": "application/json, text/plain, */*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.mysuzuki.id",
+            "referer": "https://www.mysuzuki.id/"
+          },
+          "query": {
+            "category_id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5",
+            "vehicle_id": "5f1dde89024f545826da57c3c4c0f51a88c7702d",
+            "length": "24",
+            "page": "1",
+            "name": ""
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "code": 200,
+            "message": "OK - Proses berhasil.",
+            "response": {
+              "data": [
+                {
+                  "id": "622ca056322be81c7484d285d830d787c1a33759",
+                  "vehicle_id": "5f1dde89024f545826da57c3c4c0f51a88c7702d",
+                  "category_id": "215ea63a5f68e6790d6860d0f2e052de24f5a4d5",
+                  "name": "FIG.1 CYLINDER HEAD",
+                  "description": null,
+                  "image": "https://storage.mysuzuki.id/figure/e746ec9d02541b374a9aead8fdb941fe",
+                  "sort_order": null,
+                  "created_at": "2018-10-04 18:06:32",
+                  "updated_at": "2018-03-08 05:33:14",
+                  "status_active": "1",
+                  "group_type": "primary",
+                  "file_image": "figure/e746ec9d02541b374a9aead8fdb941fe"
+                },
+                "…(+16 more items)"
+              ],
+              "summary": {
+                "total_show": 17,
+                "total_filter": 17,
+                "total_data": 10917
+              },
+              "pagination": {
+                "page": 1,
+                "per_page": 24,
+                "total_page": 1
+              }
+            }
+          }
+        },
+        "responseShape": {
+          "code": "number",
+          "message": "string",
+          "response????????????????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response??????????????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response?????????????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response????????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response???????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response??????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response?????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response????": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response???": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response??": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          },
+          "response?": {
+            "data": [
+              {
+                "id": "string",
+                "vehicle_id": "string",
+                "category_id": "string",
+                "name": "string",
+                "description": "null",
+                "image": "string",
+                "sort_order": "null",
+                "created_at": "string",
+                "updated_at": "string",
+                "status_active": "string",
+                "group_type": "string",
+                "file_image": "string"
+              }
+            ],
+            "summary": {
+              "total_show": "number",
+              "total_filter": "number",
+              "total_data": "number"
+            },
+            "pagination": {
+              "page": "number",
+              "per_page": "number",
+              "total_page": "number"
+            }
+          }
+        },
+        "queryParams": [
+          "category_id",
+          "vehicle_id",
+          "length",
+          "page",
+          "name"
+        ],
+        "avgDurationMs": 164
+      }
+    ]
+  }
+}

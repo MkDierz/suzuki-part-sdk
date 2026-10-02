@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // Environment setup
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "types": [],
+
+    // Source ergonomics (typecheck-only; build configs turn this off)
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    "noEmit": true
+  },
+  "include": ["src"]
+}

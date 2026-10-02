@@ -1,0 +1,553 @@
+{
+  "summary": {
+    "source": "./files/www.suzuki.co.id.har",
+    "totalEntries": 27,
+    "keptEntries": 27,
+    "uniqueEndpoints": 7,
+    "hosts": {
+      "api-web-corp.suzuki.co.id": 7
+    },
+    "notes": [
+      "Endpoints are deduplicated by METHOD + host + normalized path ({id}, {uuid}, {hash}, {token} replace dynamic segments).",
+      "responseShape/requestBodyShape merge ALL observed items; keys ending in '?' were only present in some.",
+      "Arrays in examples are shortened to the first item.",
+      "Authorization/cookies/tokens are masked."
+    ]
+  },
+  "endpoints": {
+    "api-web-corp.suzuki.co.id": [
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/other-part-types/index",
+        "calls": 1,
+        "statuses": {
+          "200": 1
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/other-part-types/index",
+          "headers": {
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": [
+              {
+                "id": 1,
+                "slug": "suzuki-genuine-accessories",
+                "name": "Suzuki Genuine Accessories"
+              },
+              "…(+4 more items)"
+            ],
+            "message": "Success get data",
+            "request_id": "f653a15c-84b7-4aec-8f61-8457f816d8a5"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": [
+            {
+              "id": "number",
+              "slug": "string",
+              "name": "string"
+            }
+          ],
+          "message": "string",
+          "request_id": "string"
+        },
+        "avgDurationMs": 76
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/vehicles/ajax/vehicles",
+        "calls": 12,
+        "statuses": {
+          "200": 12
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/vehicles/ajax/vehicles",
+          "headers": {
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "type": "4-wheels",
+            "return": "slug"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": {
+              "options": [
+                {
+                  "value": "",
+                  "label": "Pilih Model Kendaraan"
+                },
+                "…(+48 more items)"
+              ],
+              "type": "4-wheels"
+            },
+            "message": "Success get data",
+            "request_id": "5ebf12c1-3722-4adb-b84e-fa78a65c8a7d"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": {
+            "options": [
+              {
+                "value": "string",
+                "label": "string",
+                "selected???????????????????????????????????????????????????????????": "boolean",
+                "selected??????????????????????????????????????????????????????????": "boolean",
+                "selected?????????????????????????????????????????????????????????": "boolean",
+                "selected????????????????????????????????????????????????????????": "boolean",
+                "selected???????????????????????????????????????????????????????": "boolean",
+                "selected??????????????????????????????????????????????????????": "boolean",
+                "selected?????????????????????????????????????????????????????": "boolean",
+                "selected????????????????????????????????????????????????????": "boolean",
+                "selected???????????????????????????????????????????????????": "boolean",
+                "selected???????????????????????????????????????": "boolean",
+                "selected??????????????????????????????????????": "boolean",
+                "selected?????????????????????????????????????": "boolean",
+                "selected????????????????????????????????????": "boolean",
+                "selected???????????????????????????????????": "boolean",
+                "selected??????????????????????????????????": "boolean",
+                "selected?????????????????????????????????": "boolean",
+                "selected????????????????????????????????": "boolean",
+                "selected???????????????????????????????": "boolean",
+                "selected??????????????????????????????": "boolean",
+                "selected?????????????????????????????": "boolean",
+                "selected????????????????????????????": "boolean",
+                "selected???????????????????????????": "boolean",
+                "selected??????????????????????????": "boolean",
+                "selected?????????????????????????": "boolean",
+                "selected????????????????????????": "boolean",
+                "selected???????????????????????": "boolean",
+                "selected??????????????????????": "boolean",
+                "selected?????????????????????": "boolean",
+                "selected????????????????????": "boolean",
+                "selected???????????????????": "boolean",
+                "selected??????????????????": "boolean",
+                "selected?????????????????": "boolean",
+                "selected????????????????": "boolean",
+                "selected???????????????": "boolean",
+                "selected??????????????": "boolean",
+                "selected?????????????": "boolean",
+                "selected????????????": "boolean",
+                "selected???????????": "boolean",
+                "selected??????????": "boolean",
+                "selected?????????": "boolean",
+                "selected????????": "boolean",
+                "selected???????": "boolean",
+                "selected??????": "boolean",
+                "selected?????": "boolean",
+                "selected????": "boolean",
+                "selected???": "boolean",
+                "selected??": "boolean",
+                "selected?": "boolean"
+              }
+            ],
+            "type": "string"
+          },
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "type",
+          "return",
+          "vehicle"
+        ],
+        "avgDurationMs": 76
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/preview-tag",
+        "calls": 1,
+        "statuses": {
+          "200": 1
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/preview-tag",
+          "headers": {
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "id": "95"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": [
+              {
+                "id": 239,
+                "vehicle_id": 95,
+                "type_id": 9,
+                "position_x": "63.42592592592593",
+                "position_y": "46.12676056338028",
+                "created_at": "2018-03-29T07:26:48.000000Z",
+                "type_slug": "body",
+                "type_name": "Body"
+              },
+              "…(+2 more items)"
+            ],
+            "message": "Success get data",
+            "request_id": "42bdb171-656c-4703-966d-abf9a42b5631"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": [
+            {
+              "id": "number",
+              "vehicle_id": "number",
+              "type_id": "number",
+              "position_x": "string",
+              "position_y": "string",
+              "created_at": "string",
+              "type_slug": "string",
+              "type_name": "string"
+            }
+          ],
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "id"
+        ],
+        "avgDurationMs": 106
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/figures/ajax",
+        "calls": 6,
+        "statuses": {
+          "200": 6
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/figures/ajax",
+          "headers": {
+            "accept": "application/json, text/javascript, */*; q=0.01",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "type_slug": "engine",
+            "vehicle_id": "95",
+            "keyword": "<redacted>",
+            "page": "1",
+            "sort": ""
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": {
+              "figures": [
+                {
+                  "id": 16681,
+                  "name": "FIG.1 CYLINDER HEAD",
+                  "file_url": "https://www.suzuki.co.id/uploads/eparts/FK110_001.webp",
+                  "cdn_file_url": "https://www.suzukicdn.com/uploads/eparts/FK110_001.webp"
+                },
+                "…(+16 more items)"
+              ],
+              "page": "1",
+              "paging": "",
+              "type": {
+                "id": 5,
+                "slug": "engine",
+                "name": "Engine"
+              },
+              "vehicle": {
+                "id": 95,
+                "slug": "new-smash-fk110sd-sc",
+                "name": "NEW SMASH (FK110SD/SC)"
+              }
+            },
+            "message": "Success get data",
+            "request_id": "783df3d0-0e04-42ce-ad93-0173a8bdfcff"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": {
+            "figures": [
+              {
+                "id": "number",
+                "name": "string",
+                "file_url": "string",
+                "cdn_file_url": "string"
+              }
+            ],
+            "page": "string",
+            "paging": "string",
+            "type": {
+              "id": "number",
+              "slug": "string",
+              "name": "string"
+            },
+            "vehicle": {
+              "id": "number",
+              "slug": "string",
+              "name": "string"
+            }
+          },
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "type_slug",
+          "vehicle_id",
+          "keyword",
+          "page",
+          "sort"
+        ],
+        "avgDurationMs": 67
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/part-tags/figure/detail",
+        "calls": 3,
+        "statuses": {
+          "200": 3
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/part-tags/figure/detail",
+          "headers": {
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "figure_id": "16707"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": [
+              {
+                "id": 294770,
+                "part_id": 326432,
+                "figure_id": 16707,
+                "parent_id": 0,
+                "tag_no": "0",
+                "position_x": "55.15046296296296",
+                "position_y": "25.94458438287154",
+                "created_at": "2017-12-09T21:27:58.000000Z",
+                "updated_at": "2017-12-09T14:27:58.000000Z"
+              },
+              "…(+2 more items)"
+            ],
+            "message": "Success get data",
+            "request_id": "f1ec4881-6a7e-4034-bbf6-20727c35a096"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": [
+            {
+              "id": "number",
+              "part_id": "number",
+              "figure_id": "number",
+              "parent_id": "number",
+              "tag_no": "string",
+              "position_x": "string",
+              "position_y": "string",
+              "created_at": "string",
+              "updated_at": "string"
+            }
+          ],
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "figure_id"
+        ],
+        "avgDurationMs": 122
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/parts/figure/detail",
+        "calls": 3,
+        "statuses": {
+          "200": 3
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/parts/figure/detail",
+          "headers": {
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "figure_id": "16707"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": [
+              {
+                "id": 326432,
+                "figure_id": 16707,
+                "parent_id": null,
+                "part_no": "41100B07H00N000",
+                "complete_no": null,
+                "tag_no": "1",
+                "name": "FRAME",
+                "description": null,
+                "qty": 1,
+                "price": 1395500,
+                "price_old": 1351500,
+                "remarks": "",
+                "subpage_id": 0,
+                "order": 0,
+                "popup": 0,
+                "status": 0,
+                "created_by": null,
+                "created_at": null,
+                "updated_at": "2024-03-31T23:48:42.000000Z",
+                "is_update_price": 0,
+                "price_perliter": null,
+                "subpart": {
+                  "id": 260475,
+                  "row_no": 0,
+                  "old_part_no": "41100B07H00N000",
+                  "part_no": "DISCONTINUE",
+                  "interchange_code": "",
+                  "product_type": "",
+                  "part_category": "",
+                  "status_flag": ""
+                },
+                "subpart_price": 0
+              },
+              "…(+4 more items)"
+            ],
+            "message": "Success get data",
+            "request_id": "4e9927d5-41ee-4fb9-8499-00001757930c"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": [
+            {
+              "id": "number",
+              "figure_id": "number",
+              "parent_id": "null | number",
+              "part_no": "string",
+              "complete_no": "null",
+              "tag_no": "string",
+              "name": "string",
+              "description": "null",
+              "qty": "number",
+              "price": "number",
+              "price_old": "number",
+              "remarks": "string",
+              "subpage_id": "number",
+              "order": "number",
+              "popup": "number",
+              "status": "number",
+              "created_by": "null",
+              "created_at": "null",
+              "updated_at": "string",
+              "is_update_price": "number",
+              "price_perliter": "null",
+              "subpart": {
+                "id": "number",
+                "row_no": "number",
+                "old_part_no": "string",
+                "part_no": "string",
+                "interchange_code": "string",
+                "product_type": "string",
+                "part_category": "string",
+                "status_flag": "string"
+              },
+              "subpart_price": "number"
+            }
+          ],
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "figure_id"
+        ],
+        "avgDurationMs": 140
+      },
+      {
+        "method": "GET",
+        "host": "api-web-corp.suzuki.co.id",
+        "path": "/api/v1/eparts/parts/figure/detail/table",
+        "calls": 1,
+        "statuses": {
+          "200": 1
+        },
+        "request": {
+          "url": "https://api-web-corp.suzuki.co.id/api/v1/eparts/parts/figure/detail/table",
+          "headers": {
+            "accept": "*/*",
+            "accept-language": "en-US,en;q=0.9,id-ID;q=0.8,id;q=0.7",
+            "origin": "https://www.suzuki.co.id",
+            "referer": "https://www.suzuki.co.id/"
+          },
+          "query": {
+            "id": "326564"
+          }
+        },
+        "response": {
+          "status": 200,
+          "contentType": "application/json",
+          "example": {
+            "status": "success",
+            "data": "<table style='text-align: left;'>\n                    <tr>\n                        <th style='vertical-align: top; white…(+1085 chars)",
+            "message": "Success get data",
+            "request_id": "4f349780-344f-4af7-8186-75874f244663"
+          }
+        },
+        "responseShape": {
+          "status": "string",
+          "data": "string",
+          "message": "string",
+          "request_id": "string"
+        },
+        "queryParams": [
+          "id"
+        ],
+        "avgDurationMs": 77
+      }
+    ]
+  }
+}

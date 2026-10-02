@@ -1,0 +1,76 @@
+{
+  "name": "@mkdierz/suzuki-parts-sdk",
+  "version": "0.1.0",
+  "description": "Unofficial, dependency-free TypeScript SDK for Suzuki Indonesia parts catalogs (suzuki.co.id e-Parts + MySuzuki), with figure hotspot/overlay coordinates.",
+  "keywords": [
+    "suzuki",
+    "suzuki-indonesia",
+    "mysuzuki",
+    "eparts",
+    "spare-parts",
+    "parts-catalog",
+    "sdk",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./eparts": {
+      "import": {
+        "types": "./dist/esm/eparts/index.d.ts",
+        "default": "./dist/esm/eparts/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/eparts/index.d.ts",
+        "default": "./dist/cjs/eparts/index.js"
+      }
+    },
+    "./mysuzuki": {
+      "import": {
+        "types": "./dist/esm/mysuzuki/index.d.ts",
+        "default": "./dist/esm/mysuzuki/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/mysuzuki/index.d.ts",
+        "default": "./dist/cjs/mysuzuki/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "typecheck": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.build.esm.json",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json",
+    "build": "bun run clean && bun run typecheck && bun run build:esm && bun run build:cjs && bun run scripts/postbuild.ts",
+    "test": "bun test",
+    "publish:check": "bun run typecheck && bun test && bun run build",
+    "prepublishOnly": "bun run publish:check"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.2",
+    "typescript": "^7.0.2"
+  }
+}
